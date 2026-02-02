@@ -1,0 +1,227 @@
+// Component Styles
+// =================
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'placeholders' as *;
+
+// Card Component
+.card {
+  @extend %card-base;
+  padding: $spacing-lg;
+
+  &__header {
+    @apply mb-4; // Tailwind utility via @apply
+    padding-bottom: $spacing-md;
+    border-bottom: 1px solid $color-gray-200;
+  }
+
+  &__title {
+    @apply text-xl font-semibold; // Tailwind utilities via @apply
+    margin: 0;
+    color: $color-gray-900;
+  }
+
+  &__subtitle {
+    @apply text-sm; // Tailwind utility
+    color: $color-gray-500;
+    margin-top: $spacing-sm;
+  }
+
+  &__body {
+    @apply py-4; // Tailwind utility
+  }
+
+  &__footer {
+    @apply pt-4 border-t; // Tailwind utilities
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-md;
+  }
+
+  // Card Variants
+  &--highlight {
+    border-left: 4px solid $brand-primary;
+  }
+
+  &--error {
+    border-left: 4px solid $color-error;
+
+    .card__title {
+      color: $color-error;
+    }
+  }
+
+  &--success {
+    border-left: 4px solid $color-success;
+
+    .card__title {
+      color: $color-success;
+    }
+  }
+
+  // Hover state
+  &:hover {
+    .card__title {
+      @include transition(color);
+      color: $brand-primary;
+    }
+  }
+}
+
+// Button Component
+.btn {
+  @extend %button-base;
+
+  // Default button (primary)
+  background-color: $brand-primary;
+  color: $color-white;
+
+  &:hover {
+    background-color: darken($brand-primary, 10%);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  // Button Variants
+  &--secondary {
+    background-color: $color-gray-200;
+    color: $color-gray-900;
+
+    &:hover {
+      background-color: $color-gray-300;
+    }
+  }
+
+  &--danger {
+    background-color: $color-error;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-error, 10%);
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: $brand-primary;
+    border: 1px solid $brand-primary;
+
+    &:hover {
+      background-color: rgba($brand-primary, 0.1);
+    }
+  }
+
+  // Size Variants
+  &--sm {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+  }
+
+  &--lg {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-lg;
+  }
+
+  // Full Width
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  // Disabled State
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Input Component
+.input {
+  @extend %input-base;
+  width: 100%;
+
+  &:focus {
+    border-color: $brand-primary;
+  }
+
+  &:disabled {
+    background-color: $color-gray-100;
+    color: $color-gray-400;
+  }
+}
+
+// Badge Component
+.badge {
+  @apply inline-block px-3 py-1 rounded-full text-sm font-medium; // Tailwind utilities
+  background-color: $brand-primary;
+  color: $color-white;
+
+  &--secondary {
+    background-color: $color-gray-200;
+    color: $color-gray-900;
+  }
+
+  &--success {
+    background-color: $color-success;
+    color: $color-white;
+  }
+
+  &--error {
+    background-color: $color-error;
+    color: $color-white;
+  }
+}
+
+// Stock Ticker Component (specific to your site)
+.ticker-container {
+  @extend %card-base;
+  @include flex-between;
+  padding: $spacing-md;
+  text-decoration: none;
+  cursor: pointer;
+
+  .stock-info {
+    flex: 1;
+  }
+
+  .stock-name {
+    @apply font-semibold text-base; // Tailwind
+    color: $color-gray-900;
+  }
+
+  .stock-price {
+    @apply text-lg font-bold; // Tailwind
+    color: $brand-primary;
+    margin-top: $spacing-xs;
+  }
+
+  .stock-stats {
+    @include flex-center;
+    gap: $spacing-sm;
+  }
+
+  .stock-change {
+    font-size: 1.25rem;
+
+    &--up {
+      color: $color-success;
+    }
+
+    &--down {
+      color: $color-error;
+    }
+  }
+
+  // Down variant
+  &.ticker-down {
+    .stock-change {
+      color: $color-error;
+    }
+
+    .stock-price {
+      color: $color-error;
+    }
+  }
+}

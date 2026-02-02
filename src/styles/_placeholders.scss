@@ -1,0 +1,79 @@
+// Placeholder Classes / Reusable Rulesets
+// ========================================
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base Card Style (foundation for all cards)
+%card-base {
+  border-radius: $radius-base;
+  background-color: $color-white;
+  box-shadow: $shadow-card;
+  @include transition(box-shadow);
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Elevated Card (stronger shadow for emphasis)
+%card-elevated {
+  @extend %card-base;
+  box-shadow: $shadow-xl;
+}
+
+// Base Button Style
+%button-base {
+  @include button-reset;
+  @include focus-ring;
+  border-radius: $radius-base;
+  padding: $spacing-sm $spacing-md;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  @include transition(all);
+  cursor: pointer;
+}
+
+// Base Input Style
+%input-base {
+  border: 1px solid $color-gray-300;
+  border-radius: $radius-base;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-base;
+  font-family: $font-family-sans;
+  @include focus-ring;
+
+  &::placeholder {
+    color: $color-gray-400;
+  }
+}
+
+// Section Padding (consistent vertical spacing for sections)
+%section-padding {
+  padding: $spacing-2xl $spacing-lg;
+
+  @include md {
+    padding: $spacing-3xl $spacing-2xl;
+  }
+}
+
+// Container (centered max-width wrapper)
+%container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+  padding-left: $spacing-lg;
+  padding-right: $spacing-lg;
+}
+
+// Visually Hidden (a11y)
+%sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

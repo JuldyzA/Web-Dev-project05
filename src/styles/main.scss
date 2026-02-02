@@ -1,0 +1,14 @@
+/* Sass Partials - Variables, Mixins, Placeholders, Layout, Components */
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders' as *;
+@use 'layout' as *;
+@use 'components' as *;
+
+@tailwind base;
+@tailwind components;
+
+/* Tailwind Utilities (must come last so utilities can override) */
+@tailwind utilities;
+
+/* Optional: Custom utility classes or overrides below if needed */

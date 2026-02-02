@@ -29,10 +29,10 @@
 
 // Header / Hero Section
 .site-header {
-  background-color: $color-gray-50;
+  background-color: $brand-secondary;
   border-bottom: 1px solid $color-gray-200;
-  padding: $spacing-md $spacing-lg;
-
+  padding: $spacing-lg $spacing-lg;
+max-height: var(--header-height);
   @include md {
     padding: $spacing-lg $spacing-xl;
   }

@@ -450,7 +450,7 @@ p {
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
   min-width: 14rem;
-  min-height: 6rem;
+  min-height: 3rem;
   background: var(--color-ticker-up);
   color: var(--color-text-inverse);
   padding: 10px;
@@ -484,11 +484,6 @@ p {
   font-weight: var(--fw-semibold);
 }
 
-.stock-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
 .stock-stats {
   display: flex;

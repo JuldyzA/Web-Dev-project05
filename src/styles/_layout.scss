@@ -32,7 +32,12 @@
   background-color: $brand-secondary;
   border-bottom: 1px solid $color-gray-200;
   padding: $spacing-lg $spacing-lg;
-max-height: var(--header-height);
+    max-height: var(--header-height);
+    top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  position: sticky;
   @include md {
     padding: $spacing-lg $spacing-xl;
   }

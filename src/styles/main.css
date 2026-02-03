@@ -289,10 +289,68 @@ section:not(:last-child) {
   color: #ef4444;
 }
 
+.science-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+  padding: 1.5rem 0;
+  user-select: none;
+  border-top: 2px solid #0ea5a4;
+  border-bottom: 8px solid #0ea5a4;
+  position: relative;
+}
+.science-header h2 {
+  margin: 0;
+  @apply text-2xl font-bold uppercase;
+  color: #0ea5a4;
+  letter-spacing: 0.05em;
+}
+
+.arrow-icon {
+  display: inline-block;
+  font-size: 3.2rem;
+  transition: transform 250ms ease-in-out;
+}
+.arrow-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.science-articles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: start;
+  overflow: hidden;
+  max-height: 2000px;
+  transition: max-height opacity 250ms ease-in-out;
+  opacity: 1;
+}
+.science-articles.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.science-part {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+.science-part img {
+  width: 100%;
+  height: auto;
+  max-height: 30rem;
+  object-fit: cover;
+}
+
+.article-lead,
+.article-body {
+  padding: 0 0.5rem;
+}
+
 @tailwind base;
 @tailwind components;
 /* Tailwind Utilities (must come last so utilities can override) */
 @tailwind utilities;
 /* Optional: Custom utility classes or overrides below if needed */
-
-/*# sourceMappingURL=main.css.map */

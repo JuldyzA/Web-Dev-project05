@@ -225,3 +225,69 @@
     }
   }
 }
+
+// Science Section Toggle
+.science-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  cursor: pointer;
+  padding: $spacing-lg 0;
+  user-select: none;
+  border-top: 2px solid $brand-primary;
+  border-bottom: 8px solid $brand-primary;
+  position: relative;
+
+  h2 {
+    margin: 0;
+    @apply text-2xl font-bold uppercase;
+    color: $brand-primary;
+    letter-spacing: 0.05em;
+  }
+}
+
+.arrow-icon {
+  display: inline-block;
+  font-size: 3.2rem;
+  @include transition(transform);
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+// Science Articles
+.science-articles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $spacing-xl;
+  align-items: start;
+  overflow: hidden;
+  max-height: 2000px;
+  @include transition(max-height opacity);
+  opacity: 1;
+
+  &.collapsed {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.science-part {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-lg;
+  border: 1px solid $color-gray-200;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 30rem;
+    object-fit: cover;
+  }
+}
+
+.article-lead,
+.article-body {
+  padding: 0 $spacing-sm;
+}

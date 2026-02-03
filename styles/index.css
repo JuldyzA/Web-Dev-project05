@@ -173,7 +173,7 @@ p {
 
 /* Header
 --------------------------------------------- */
-.site-header {
+/* .site-header {
   background: var(--color-background-header);
   position: sticky;
   padding: 0 1rem;
@@ -182,9 +182,9 @@ p {
   left: 0;
   right: 0;
   z-index: 10;
-}
+} */
 
-.site-name {
+/* .site-name {
   font-size: var(--fs-xl);
   color: var(--color-text-inverse);
   margin: 0.5rem 0;
@@ -239,8 +239,8 @@ p {
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-}
-
+} */
+/* 
 .hamburger-menu {
   background: none;
   border: none;
@@ -276,10 +276,10 @@ p {
 .nav-list li > a {
   text-decoration: none;
   color: var(--color-text-inverse);
-}
+} */
 
-.nav-list li > a:hover {
-  /* border-bottom: 5px solid var(--color-brand-accent); */
+/* .nav-list li > a:hover {
+  border-bottom: 5px solid var(--color-brand-accent);
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 3px;
@@ -302,10 +302,10 @@ p {
 
   #mobile-menu-button {
     display: block;
-  }
+  } */
 
   /* Mobile menu visibility */
-  .site-nav {
+  /* .site-nav {
     position: fixed;
     top: var(--header-height);
     left: 0;
@@ -336,7 +336,7 @@ p {
   .nav-list li:last-child {
     border-bottom: none;
   }
-}
+} */
 
 /* Stock Ticker
 --------------------------------------------- */

@@ -4,6 +4,7 @@
 @use 'placeholders' as *;
 @use 'layout' as *;
 @use 'components' as *;
+@use 'components/header' as *;
 
 @tailwind base;
 @tailwind components;

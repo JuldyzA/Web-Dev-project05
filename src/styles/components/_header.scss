@@ -1,0 +1,82 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.site-header {
+  background: $color-background-header;
+  height: $header-height;
+  @apply 
+  sticky top-0 w-full 
+  flex flex-row px-4 z-50;
+}
+
+
+.site-header-first-section {
+  @apply 
+  flex items-center 
+  justify-between w-full py-2;
+}
+
+.site-name {
+  font-family: $font-heading;
+  font-size: $fs-xl;
+  color: $color-text-inverse;
+  margin: 0;
+}
+
+.site-header-first-section-right {
+  @apply 
+  flex items-center 
+  gap-4 text-sm font-semibold;
+
+  a {
+    color: $color-text-inverse;
+    @apply hover:text-yellow-400 transition-colors;
+  }
+}
+
+.separator {
+  color: $color-text-inverse;
+  font-weight: $fw-semibold;
+}
+
+.site-header-second-section {
+  @apply flex items-center justify-between w-full py-2;
+}
+
+.nav-list {
+  @apply hidden md:flex gap-6 text-sm font-semibold;
+
+  li {
+    list-style: none;
+
+    a {
+      color: $color-text-inverse;
+      @apply hover:underline underline-offset-4 decoration-2 decoration-yellow-400;
+    }
+  }
+}
+
+#mobile-menu-button {
+  @apply block md:hidden text-white text-2xl cursor-pointer;
+}
+
+.site-nav {
+  @apply hidden md:flex bg-transparent overflow-visible max-h-none transition-all duration-300;
+
+  &.mobile-active {
+    @apply flex md:hidden;
+    max-height: 400px;
+  }
+
+  ul {
+    @apply flex flex-row gap-6 p-0 m-0;
+
+    li {
+      @apply border-b-0 pb-0 list-none;
+
+      a {
+        @apply text-white font-semibold;
+      }
+    }
+  }
+}

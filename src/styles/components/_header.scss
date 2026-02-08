@@ -52,3 +52,6 @@
   @apply block md:hidden text-2xl cursor-pointer ml-auto;
   color: $color-text-inverse;
 }
+body{
+  background-color: $color-background-primary;
+}

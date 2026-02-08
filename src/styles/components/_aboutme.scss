@@ -1,1 +1,85 @@
 @use '../variables' as *;
+
+.science {
+  @apply py-20 px-6;
+
+  background: $color-background-primary;
+  color: $color-text-primary;
+
+  /* Container */
+  &-container {
+    @apply max-w-6xl mx-auto grid gap-10 md:grid-cols-2;
+  }
+
+  /* Card */
+  &-card {
+    @apply rounded-2xl overflow-hidden border transition;
+  background: $color-background-secondary;
+  border-color: rgba($color-border-primary, 0.2);
+  position: relative;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-card;
+    }
+
+    img {
+      @apply w-full h-56 object-cover;
+    }
+  }
+
+  /* Tag */
+  &-tag {
+    @apply inline-block text-xs uppercase tracking-widest px-4 py-2 mt-4 ml-4 rounded-full;
+
+    background: $brand-accent;
+    color: $color-text-inverse;
+  }
+
+  /* Text */
+  &-text {
+    @apply px-6 py-4 leading-relaxed text-base;
+
+    color: $color-text-secondary;
+  }
+
+  /* List */
+  &-list {
+    @apply px-6 py-4 space-y-2;
+
+    li {
+      color: $color-text-secondary;
+      position: relative;
+      padding-left: 1.2rem;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: $brand-accent;
+      }
+    }
+  }
+}
+
+.science-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+  transition: left 0.6s ease-in-out;
+}
+
+.science-card:hover::after {
+  left: 120%;
+}
+
+

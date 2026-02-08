@@ -47,12 +47,12 @@
 .hero-label {
   @apply text-xs uppercase tracking-[3px] pb-2 mb-4 border-b;
   color: $color-text-secondary;
-  border-color: rgba($color-border-primary, 0.2);
+  border-color: rgba($color-border-primary, 0.08);
 }
 /* Vertical divider between columns */
 .hero-left {
   @apply  md:border-r px-6 py-4;
-  border-color: rgba($color-border-primary, 0.2);
+  border-color: rgba($color-border-primary, 0.08);
 }
 
 .hero-right {

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Sass Partials */
 .site-header {
   background: #030712;
@@ -44,6 +45,10 @@
 #mobile-menu-button {
   @apply block md:hidden text-2xl cursor-pointer ml-auto;
   color: #ffffff;
+}
+
+body {
+  background-color: #0f172a;
 }
 
 /* Sass Partials */
@@ -135,13 +140,13 @@
 .hero-label {
   @apply text-xs uppercase tracking-[3px] pb-2 mb-4 border-b;
   color: #cbd5e1;
-  border-color: rgba(51, 65, 85, 0.2);
+  border-color: rgba(51, 65, 85, 0.08);
 }
 
 /* Vertical divider between columns */
 .hero-left {
   @apply md:border-r px-6 py-4;
-  border-color: rgba(51, 65, 85, 0.2);
+  border-color: rgba(51, 65, 85, 0.08);
 }
 
 .hero-right {
@@ -161,6 +166,79 @@
 /* ===== TICKER SECTION ===== */
 .stock-ticker-section {
   @apply py-2 relative z-10;
+}
+
+.science {
+  @apply py-20 px-6;
+  background: #0f172a;
+  color: #f1f5f9;
+  /* Container */
+}
+.science-container {
+  @apply max-w-6xl mx-auto grid gap-10 md:grid-cols-2;
+}
+.science {
+  /* Card */
+}
+.science-card {
+  @apply rounded-2xl overflow-hidden border transition;
+  background: #1e293b;
+  border-color: rgba(51, 65, 85, 0.2);
+  position: relative;
+}
+.science-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.science-card img {
+  @apply w-full h-56 object-cover;
+}
+.science {
+  /* Tag */
+}
+.science-tag {
+  @apply inline-block text-xs uppercase tracking-widest px-4 py-2 mt-4 ml-4 rounded-full;
+  background: #f59e0b;
+  color: #ffffff;
+}
+.science {
+  /* Text */
+}
+.science-text {
+  @apply px-6 py-4 leading-relaxed text-base;
+  color: #cbd5e1;
+}
+.science {
+  /* List */
+}
+.science-list {
+  @apply px-6 py-4 space-y-2;
+}
+.science-list li {
+  color: #cbd5e1;
+  position: relative;
+  padding-left: 1.2rem;
+}
+.science-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #f59e0b;
+}
+
+.science-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease-in-out;
+}
+
+.science-card:hover::after {
+  left: 120%;
 }
 
 /* Tailwind core */

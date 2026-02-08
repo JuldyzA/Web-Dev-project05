@@ -1,4 +1,4 @@
-/* Sass Partials - Variables, Mixins, Placeholders, Layout, Components */
+/* Sass Partials */
 
 .site-header {
   background: #030712;
@@ -112,7 +112,7 @@
   color: #ffffff;
 }
 
-/* Sass Partials - Variables, Mixins, Placeholders, Layout, Components */
+/* Sass Partials */
 
 .stock-ticker-section {
   width: 100%;
@@ -235,19 +235,6 @@
 }
 
 .hero {
-  /* Label */
-}
-
-.hero-label {
-  margin-bottom: 1rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #cbd5e1;
-}
-
-.hero {
   /* Heading */
 }
 
@@ -305,6 +292,41 @@
   gap: 1rem;
 }
 
+.hero-label {
+  margin-bottom: 1rem;
+  border-bottom-width: 1px;
+  padding-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #cbd5e1;
+  border-color: rgba(51, 65, 85, 0.2);
+}
+
+/* Vertical divider between columns */
+
+.hero-left {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-left {
+    border-right-width: 1px;
+  }
+}
+
+.hero-left {
+  border-color: rgba(51, 65, 85, 0.2);
+}
+
+.hero-right {
+  padding-left: 1.5rem;
+}
+
 /* ===== BUTTONS ===== */
 
 .btn-primary {
@@ -336,6 +358,8 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+
+/* Tailwind core */
 
 /* ! tailwindcss v3.4.8 | MIT License | https://tailwindcss.com */
 
@@ -891,8 +915,6 @@ video {
   --tw-contain-style:  ;
 }
 
-/* Tailwind Utilities (must come last so utilities can override) */
-
 .visible {
   visibility: visible;
 }
@@ -990,7 +1012,5 @@ video {
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* Optional: Custom utility classes or overrides below if needed */
 
 /*# sourceMappingURL=tailwind.css.map */

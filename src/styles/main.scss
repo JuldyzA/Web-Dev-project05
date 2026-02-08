@@ -1,17 +1,16 @@
-/* Sass Partials - Variables, Mixins, Placeholders, Layout, Components */
-@use 'variables' as v;
-@use 'mixins' as m;
+/* Sass Partials */
+@use 'variables' as *;
+@use 'mixins' as *;
 @use 'placeholders' as *;
-@use 'layout' as *;
-@use 'components' as *;
+@use 'layout';
+@use 'components';
 @use 'components/header' as *;
 @use 'components/ticker' as *;
 @use 'components/banner' as *;
+@use 'components/aboutme' as *;
 
+/* Tailwind core */
 @tailwind base;
 @tailwind components;
-
-/* Tailwind Utilities (must come last so utilities can override) */
 @tailwind utilities;
 
-/* Optional: Custom utility classes or overrides below if needed */

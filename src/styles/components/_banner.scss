@@ -11,11 +11,12 @@
 /* ===== HERO SECTION ===== */
 
 .hero {
-  @apply flex-1 flex items-center py-6;
-
+  @apply flex-1 flex items-center py-6 ;
   background: $color-background-primary;
   color: $color-text-primary;
   font-family: $font-family-sans-2;
+
+  // border-color: rgba($color-background-secondary, 0.3);
 
   /* Container */
   &-container {
@@ -25,12 +26,6 @@
     @screen md {
       grid-template-columns: 1.3fr 1fr;
     }
-  }
-
-  /* Label */
-  &-label {
-    @apply text-xs uppercase tracking-[3px] mb-4;
-    color: $color-text-secondary;
   }
 
   /* Heading */
@@ -48,6 +43,20 @@
   &-buttons {
     @apply flex gap-4 flex-wrap items-center;
   }
+}
+.hero-label {
+  @apply text-xs uppercase tracking-[3px] pb-2 mb-4 border-b;
+  color: $color-text-secondary;
+  border-color: rgba($color-border-primary, 0.2);
+}
+/* Vertical divider between columns */
+.hero-left {
+  @apply  md:border-r px-6 py-4;
+  border-color: rgba($color-border-primary, 0.2);
+}
+
+.hero-right {
+  @apply pl-6;
 }
 
 /* ===== BUTTONS ===== */

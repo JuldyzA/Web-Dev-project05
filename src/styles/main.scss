@@ -5,6 +5,7 @@
 @use 'layout' as *;
 @use 'components' as *;
 @use 'components/header' as *;
+@use 'components/ticker' as *;
 
 @tailwind base;
 @tailwind components;

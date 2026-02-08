@@ -1,0 +1,45 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../placeholders' as *;
+
+.stock-ticker-section{
+  @apply w-full overflow-hidden;
+  background: $color-background-primary;
+  color: $color-text-primary;
+  font-family: $font-family-sans-2;
+}
+
+.stock-ticker-container{
+  @apply max-w-7xl mx-auto overflow-hidden relative;
+}
+
+.tickers{
+  @apply flex gap-8 shrink-0 whitespace-nowrap;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+}
+
+.ticker-container{
+  @extend %ticker-base;
+  @apply px-4 py-2 rounded-xl shadow transition hover:shadow-lg;
+
+
+  color: $color-text-inverse;
+
+  min-width: 14rem;
+  min-height: 3rem;
+
+  transition:
+    transform $transition-base,
+    box-shadow $transition-base,
+    background $transition-base;
+
+  &:hover{
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

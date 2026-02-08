@@ -4,9 +4,7 @@
 
 .stock-ticker-section{
   @apply w-full overflow-hidden;
-  background: $color-background-primary;
-  color: $color-text-primary;
-  font-family: $font-family-sans-2;
+  background-color: $color-button-primary; 
 }
 
 .stock-ticker-container{
@@ -19,24 +17,27 @@
   animation: scroll 30s linear infinite;
 }
 
-.ticker-container{
-  @extend %ticker-base;
-  @apply px-4 py-2 rounded-xl shadow transition hover:shadow-lg;
+.ticker-container {
+  @apply flex items-center justify-center gap-3 px-4 py-2 rounded-xl transition-all duration-300;
 
+  // background: $color-background-elevated;
+  color: $color-text-primary;
+  min-width: 10rem;
 
-  color: $color-text-inverse;
-
-  min-width: 14rem;
-  min-height: 3rem;
-
-  transition:
-    transform $transition-base,
-    box-shadow $transition-base,
-    background $transition-base;
-
-  &:hover{
-    transform: translateY(-5px);
+  &:hover {
+    // background: $color-background-secondary;
+    color: $brand-accent;
+    transform: translateY(-1px);
+    box-shadow: $shadow-card;
   }
+}
+
+.ticker-icon {
+  @apply w-5 h-5 shrink-0 transition-colors;
+}
+
+.stock-name {
+  @apply font-medium text-sm;
 }
 
 @keyframes scroll {

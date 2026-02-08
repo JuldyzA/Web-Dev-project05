@@ -1,63 +1,54 @@
 @use '../variables' as *;
 
-/* ===== HEADER ===== */
 .site-header {
-  background: $color-background-header;
+  background: $color-button-primary;
   height: $header-height;
+  box-shadow: $shadow-card;
+
   @apply sticky top-0 w-full flex items-center px-4 z-50;
 }
 
-/* ===== HEADER INNER CONTAINER ===== */
 .site-header-first-section {
   @apply flex items-center w-full gap-6;
 }
 
-/* ===== LOGO / SITE NAME ===== */
 .site-name {
   font-family: $font-family-sans-1;
   color: $color-text-inverse;
   margin: 0;
   letter-spacing: 1px;
+
   @apply text-2xl font-bold;
 }
 
-/* ===== NAV CONTAINER ===== */
 .site-nav {
-  @apply ml-auto hidden md:flex 
-         bg-transparent overflow-visible 
-         transition-all duration-300;
+  @apply ml-auto hidden md:flex bg-transparent overflow-visible transition-all duration-300;
 
   &.mobile-active {
-    @apply flex md:hidden flex-col absolute 
-           top-full left-0 w-full p-4;
+    @apply flex md:hidden flex-col absolute top-full left-0 w-full p-4;
+    background: $color-button-primary;
     max-height: 400px;
   }
 }
 
-/* ===== NAV LIST ===== */
 .nav-list {
   @apply flex gap-6 font-semibold p-0 m-0;
+
   li {
     list-style: none;
 
     a {
-    
       color: $color-text-inverse;
-      @apply transition-colors lowercase;
+      @apply transition-colors;
 
       &:hover {
-        @apply underline underline-offset-4 
-               decoration-2 decoration-yellow-400;
+        @apply underline underline-offset-4 decoration-2 decoration-yellow-400;
       }
     }
   }
 }
 
-/* ===== MOBILE MENU BUTTON ===== */
 #mobile-menu-button {
-  @apply block md:hidden text-white text-2xl cursor-pointer ml-auto;
-}
-/* ===== HEADER SHADOW ===== */
-.site-header {
-  box-shadow: $shadow-card;
+  @apply block md:hidden text-2xl cursor-pointer ml-auto;
+  color: $color-text-inverse;
 }

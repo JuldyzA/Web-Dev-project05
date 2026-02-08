@@ -1,41 +1,5 @@
-/* --------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Imports
-# Banner Section
-    - Main Banner Container
-    - Slider Track & Images
-    - Slider Headlines & Text
-    - Center Banner Section
-# News Feed Section
-    - News Container
-    - News List & Items
-    - News Metadata & Typography
-    - News Badges (Pro & Club)
-# Market Section
-    - Market Container
-    - Market Movers
-    - Market Charts & Bars
-# Main Article Section
-    - Hero Article
-    - Article Typography
-# Science Section
-    - Science Container
-    - Science Header & Toggle
-    - Science Articles
-# Responsive Design
-    - Tablet (1064px)
-    - Mobile (480px & 700px)
---------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-# Imports
---------------------------------------------------------------*/
 @import url(/styles/index.css);
-
-/*--------------------------------------------------------------
-# Banner Section
---------------------------------------------------------------*/
 
 /* Main Banner Container */
 .banner {
@@ -497,13 +461,15 @@
     display: none; 
   }
 }
+
+
 /*--------------------------------------------------------------
 # Main Article Section
 --------------------------------------------------------------*/
 
 /* Hero Article */
 .main-article {
-    /* margin: 3rem 0; */
+    
     min-height: 80vh;
     max-height: 90vh;
     overflow: hidden;
@@ -525,7 +491,7 @@
     pointer-events: none;
 }
 
-/* .main-article .hero-article::before {
+.main-article .hero-article::before {
     content: "";
     position: absolute;
     top: -25%;
@@ -537,7 +503,7 @@
     transform-origin: center;
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
     pointer-events: none;
-}
+} 
 
 /* Article Typography */
 .article-title {

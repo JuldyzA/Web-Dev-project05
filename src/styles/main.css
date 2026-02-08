@@ -1,23 +1,15 @@
 /* Sass Partials - Variables, Mixins, Placeholders, Layout, Components */
-.ticker-container {
-  padding: 1rem 0.5rem;
-  margin-right: 1rem;
-  border-radius: 10px;
-}
-
-/* ===== HEADER ===== */
 .site-header {
   background: #030712;
   height: 70px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   @apply sticky top-0 w-full flex items-center px-4 z-50;
 }
 
-/* ===== HEADER INNER CONTAINER ===== */
 .site-header-first-section {
   @apply flex items-center w-full gap-6;
 }
 
-/* ===== LOGO / SITE NAME ===== */
 .site-name {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   color: #ffffff;
@@ -26,19 +18,15 @@
   @apply text-2xl font-bold;
 }
 
-/* ===== NAV CONTAINER ===== */
 .site-nav {
-  @apply ml-auto hidden md:flex
-         bg-transparent overflow-visible
-         transition-all duration-300;
+  @apply ml-auto hidden md:flex bg-transparent overflow-visible transition-all duration-300;
 }
 .site-nav.mobile-active {
-  @apply flex md:hidden flex-col absolute
-           top-full left-0 w-full p-4;
+  @apply flex md:hidden flex-col absolute top-full left-0 w-full p-4;
+  background: #030712;
   max-height: 400px;
 }
 
-/* ===== NAV LIST ===== */
 .nav-list {
   @apply flex gap-6 font-semibold p-0 m-0;
 }
@@ -47,29 +35,21 @@
 }
 .nav-list li a {
   color: #ffffff;
-  @apply transition-colors lowercase;
+  @apply transition-colors;
 }
 .nav-list li a:hover {
-  @apply underline underline-offset-4
-               decoration-2 decoration-yellow-400;
+  @apply underline underline-offset-4 decoration-2 decoration-yellow-400;
 }
 
-/* ===== MOBILE MENU BUTTON ===== */
 #mobile-menu-button {
-  @apply block md:hidden text-white text-2xl cursor-pointer ml-auto;
-}
-
-/* ===== HEADER SHADOW ===== */
-.site-header {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  @apply block md:hidden text-2xl cursor-pointer ml-auto;
+  color: #ffffff;
 }
 
 /* Sass Partials - Variables, Mixins, Placeholders, Layout, Components */
 .stock-ticker-section {
   @apply w-full overflow-hidden;
-  background: #0f172a;
-  color: #f1f5f9;
-  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  background-color: #030712;
 }
 
 .stock-ticker-container {
@@ -83,14 +63,22 @@
 }
 
 .ticker-container {
-  @apply px-4 py-2 rounded-xl shadow transition hover:shadow-lg;
-  color: #ffffff;
-  min-width: 14rem;
-  min-height: 3rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  @apply flex items-center justify-center gap-3 px-4 py-2 rounded-xl transition-all duration-300;
+  color: #f1f5f9;
+  min-width: 10rem;
 }
 .ticker-container:hover {
-  transform: translateY(-5px);
+  color: #f59e0b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ticker-icon {
+  @apply w-5 h-5 shrink-0 transition-colors;
+}
+
+.stock-name {
+  @apply font-medium text-sm;
 }
 
 @keyframes scroll {
@@ -101,6 +89,70 @@
     transform: translateX(-50%);
   }
 }
+/* ===== WRAPPER (Hero + Ticker one screen) ===== */
+.hero-wrapper {
+  @apply min-h-screen flex flex-col;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  @apply flex-1 flex items-center py-6;
+  background: #0f172a;
+  color: #f1f5f9;
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  /* Container */
+}
+.hero-container {
+  @apply max-w-[1200px] mx-auto grid gap-8 md:gap-12 px-6;
+  grid-template-columns: 1fr;
+}
+@screen md {
+  .hero-container {
+    grid-template-columns: 1.3fr 1fr;
+  }
+}
+.hero {
+  /* Label */
+}
+.hero-label {
+  @apply text-xs uppercase tracking-[3px] mb-4;
+  color: #cbd5e1;
+}
+.hero {
+  /* Heading */
+}
+.hero h1 {
+  @apply font-semibold leading-tight text-4xl md:text-6xl lg:text-7xl;
+}
+.hero {
+  /* Description */
+}
+.hero-desc {
+  @apply text-base md:text-lg mb-6 max-w-[450px];
+  color: #cbd5e1;
+}
+.hero {
+  /* Buttons */
+}
+.hero-buttons {
+  @apply flex gap-4 flex-wrap items-center;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  @apply px-6 py-3 rounded-full font-semibold transition flex items-center gap-2;
+  background: #030712;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  color: #f59e0b;
+}
+
+/* ===== TICKER SECTION ===== */
+.stock-ticker-section {
+  @apply py-2;
+}
+
 @tailwind base;
 @tailwind components;
 /* Tailwind Utilities (must come last so utilities can override) */

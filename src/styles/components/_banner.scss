@@ -1,1 +1,85 @@
 @use '../variables' as *;
+
+/* ===== WRAPPER (Hero + Ticker one screen) ===== */
+
+.hero-wrapper {
+  @apply min-h-screen flex flex-col;
+
+}
+
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+  @apply flex-1 flex items-center py-6;
+
+  background: $color-background-primary;
+  color: $color-text-primary;
+  font-family: $font-family-sans-2;
+
+  /* Container */
+  &-container {
+    @apply max-w-[1200px] mx-auto grid gap-8 md:gap-12 px-6;
+    grid-template-columns: 1fr;
+
+    @screen md {
+      grid-template-columns: 1.3fr 1fr;
+    }
+  }
+
+  /* Label */
+  &-label {
+    @apply text-xs uppercase tracking-[3px] mb-4;
+    color: $color-text-secondary;
+  }
+
+  /* Heading */
+  h1 {
+    @apply font-semibold leading-tight text-4xl md:text-6xl lg:text-7xl;
+  }
+
+  /* Description */
+  &-desc {
+    @apply text-base md:text-lg mb-6 max-w-[450px];
+    color: $color-text-secondary;
+  }
+
+  /* Buttons */
+  &-buttons {
+    @apply flex gap-4 flex-wrap items-center;
+  }
+}
+
+
+/* ===== BUTTONS ===== */
+
+.btn-primary {
+  @apply px-6 py-3 rounded-full font-semibold transition flex items-center gap-2;
+
+  background: $color-button-primary;
+  color: $color-text-inverse;
+
+  &:hover {
+    // background: $color-button-primary-hover;
+    color: $brand-accent;
+  }
+}
+
+// .btn-outline {
+//   @apply px-6 py-3 rounded-full font-semibold transition border flex items-center gap-2;
+
+//   border-color: $color-border-primary;
+//   color: $color-text-primary;
+//   background: transparent;
+
+//   &:hover {
+//     background: $color-background-secondary;
+//   }
+// }
+
+
+/* ===== TICKER SECTION ===== */
+
+.stock-ticker-section {
+  @apply py-2;
+}

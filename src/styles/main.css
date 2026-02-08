@@ -91,7 +91,8 @@
 }
 /* ===== WRAPPER (Hero + Ticker one screen) ===== */
 .hero-wrapper {
-  @apply min-h-screen flex flex-col;
+  min-height: calc(100vh - 70px);
+  @apply flex flex-col;
 }
 
 /* ===== HERO SECTION ===== */
@@ -150,7 +151,7 @@
 
 /* ===== TICKER SECTION ===== */
 .stock-ticker-section {
-  @apply py-2;
+  @apply py-2 relative z-10;
 }
 
 @tailwind base;

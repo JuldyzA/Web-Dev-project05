@@ -3,8 +3,8 @@
 /* ===== WRAPPER (Hero + Ticker one screen) ===== */
 
 .hero-wrapper {
-  @apply min-h-screen flex flex-col;
-
+  min-height: calc(100vh - #{$header-height});
+  @apply flex flex-col;
 }
 
 
@@ -50,9 +50,7 @@
   }
 }
 
-
 /* ===== BUTTONS ===== */
-
 .btn-primary {
   @apply px-6 py-3 rounded-full font-semibold transition flex items-center gap-2;
 
@@ -60,7 +58,6 @@
   color: $color-text-inverse;
 
   &:hover {
-    // background: $color-button-primary-hover;
     color: $brand-accent;
   }
 }
@@ -79,7 +76,6 @@
 
 
 /* ===== TICKER SECTION ===== */
-
 .stock-ticker-section {
-  @apply py-2;
+  @apply py-2 relative z-10;
 }

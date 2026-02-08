@@ -189,8 +189,8 @@
 /* ===== WRAPPER (Hero + Ticker one screen) ===== */
 
 .hero-wrapper {
+  min-height: calc(100vh - 70px);
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
 }
 
@@ -331,6 +331,8 @@
 /* ===== TICKER SECTION ===== */
 
 .stock-ticker-section {
+  position: relative;
+  z-index: 10;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }

@@ -3,29 +3,40 @@
 /* ===== COMMON SECTION TITLE ===== */
 
 .market-section-subtitle {
-  @apply text-3xl font-bold text-center mb-12;
+  @apply text-3xl font-bold text-center mb-10;
   color: $color-text-primary;
 }
 
 /* ===== SKILLS SECTION ===== */
 
 .market-latest-news {
-  @apply py-20 px-6;
+  @apply py-10 px-2;
 }
 
 /* Skills grid */
 
 .skills-grid {
-  @apply flex flex-wrap gap-6 justify-center mt-12;
+  @apply grid gap-4 mt-8;
+
+  /* Mobile → 2 columns */
+  grid-template-columns: repeat(2, 1fr);
+
+  /* Tablet */
+  @screen md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Desktop */
+  @screen xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* Skill card */
 
 .skill-card {
-  @apply px-6 py-5 rounded-xl transition overflow-hidden;
+  @apply px-2 py-2 md:px-6 md:py-5 rounded-xl transition overflow-hidden;
 
-  width: 260px;
-  background: $color-background-secondary;
   border: 1px solid rgba($color-border-primary, 0.2);
 
   &:hover {

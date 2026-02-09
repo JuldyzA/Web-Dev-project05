@@ -4,7 +4,7 @@
   background: $color-button-primary;
   height: $header-height;
   box-shadow: $shadow-card;
-
+padding-inline: clamp(1rem, 4vw, 2rem);
   @apply sticky top-0 w-full flex items-center px-4 z-50;
 }
 
@@ -22,8 +22,7 @@
 }
 
 .site-nav {
-  @apply ml-auto hidden md:flex bg-transparent overflow-visible transition-all duration-300;
-
+   @apply ml-auto flex items-center;
   &.mobile-active {
     @apply flex md:hidden flex-col absolute top-full left-0 w-full p-4;
     background: $color-button-primary;
@@ -32,14 +31,14 @@
 }
 
 .nav-list {
-  @apply flex gap-6 font-semibold p-0 m-0;
+  @apply flex gap-3 md:gap-6 text-sm md:text-base font-semibold p-0 m-0;
 
   li {
     list-style: none;
 
     a {
       color: $color-text-inverse;
-      @apply transition-colors;
+      @apply transition-colors whitespace-nowrap;
 
       &:hover {
         @apply underline underline-offset-4 decoration-2 decoration-yellow-400;
@@ -48,10 +47,7 @@
   }
 }
 
-#mobile-menu-button {
-  @apply block md:hidden text-2xl cursor-pointer ml-auto;
-  color: $color-text-inverse;
-}
+
 body{
   background-color: $color-background-primary;
 }

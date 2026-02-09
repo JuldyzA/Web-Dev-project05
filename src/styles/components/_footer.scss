@@ -1,0 +1,43 @@
+
+@use '../variables' as *;
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+  @apply py-4 px-4 mt-4;
+
+  background: $color-button-primary;
+  border-top: 1px solid rgba($color-border-primary, 0.2);
+}
+
+/* Wrapper */
+
+.footer-wrapper {
+  @apply max-w-6xl mx-auto;
+}
+
+/* Head section */
+
+.footer-head {
+  @apply flex flex-col items-center gap-4 text-center;
+
+  @screen md {
+    @apply flex-row justify-between text-left;
+  }
+}
+
+/* Logo */
+
+.footer-logo {
+  @apply text-xl font-bold tracking-wide;
+
+  color: $brand-accent;
+}
+
+/* Copyright */
+
+.copy {
+  @apply text-sm;
+
+  color: $color-text-secondary;
+}

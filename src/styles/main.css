@@ -4,6 +4,7 @@
   background: #030712;
   height: 70px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding-inline: clamp(1rem, 4vw, 2rem);
   @apply sticky top-0 w-full flex items-center px-4 z-50;
 }
 
@@ -20,7 +21,7 @@
 }
 
 .site-nav {
-  @apply ml-auto hidden md:flex bg-transparent overflow-visible transition-all duration-300;
+  @apply ml-auto flex items-center;
 }
 .site-nav.mobile-active {
   @apply flex md:hidden flex-col absolute top-full left-0 w-full p-4;
@@ -29,22 +30,17 @@
 }
 
 .nav-list {
-  @apply flex gap-6 font-semibold p-0 m-0;
+  @apply flex gap-3 md:gap-6 text-sm md:text-base font-semibold p-0 m-0;
 }
 .nav-list li {
   list-style: none;
 }
 .nav-list li a {
   color: #ffffff;
-  @apply transition-colors;
+  @apply transition-colors whitespace-nowrap;
 }
 .nav-list li a:hover {
   @apply underline underline-offset-4 decoration-2 decoration-yellow-400;
-}
-
-#mobile-menu-button {
-  @apply block md:hidden text-2xl cursor-pointer ml-auto;
-  color: #ffffff;
 }
 
 body {
@@ -229,92 +225,91 @@ body {
   height: 100%;
   background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.6s ease-in-out;
-  color: #f59e0b;
 }
 
 .science-card:hover::after {
   left: 120%;
 }
 
-/* ===== MAIN BANNER GRID ===== */
-section .banner {
-  @apply relative grid gap-6 mx-6 my-8 overflow-hidden;
-  grid-template-columns: 2fr 1fr 1fr;
+/* ===== PROJECT SECTION WRAPPER ===== */
+.banner {
+  @apply px-4 py-4 flex flex-col gap-6;
+  max-width: 1200px;
+  margin: auto;
   background: #0f172a;
-  max-height: clamp(520px, 70vh, 900px);
-  /* Responsive */
-}
-@screen md {
-  section .banner {
-    grid-template-columns: 1fr;
-  }
 }
 
-/* ===== HERO SLIDER ===== */
+/* ===== BIG SLIDER ===== */
 .auto-track {
-  @apply relative overflow-hidden h-full rounded-2xl transition;
-  height: 500px;
+  @apply relative overflow-hidden rounded-2xl mx-auto;
+  max-width: 900px; /* controls width */
 }
 
 .banner-slide {
-  @apply relative hidden h-full;
+  @apply relative hidden rounded-2xl overflow-hidden;
   aspect-ratio: 16/9;
 }
 .banner-slide:first-child {
   @apply block;
 }
 .banner-slide img {
-  @apply w-full h-full object-cover transition-transform duration-500;
+  @apply w-full h-full object-cover transition-transform duration-700;
 }
 .banner-slide:hover img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
-/* ===== SLIDER TEXT OVERLAY ===== */
+/* ===== SLIDER TEXT ===== */
 .slider-headlines {
-  @apply absolute bottom-0 left-0 right-0 p-6;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6), transparent);
+  @apply absolute bottom-0 left-0 right-0 p-8;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5), transparent);
   backdrop-filter: blur(6px);
   color: #ffffff;
 }
 .slider-headlines .slider-title {
-  @apply font-extrabold leading-tight mb-2;
-  font-size: clamp(1.4rem, 1vw + 1rem, 2.4rem);
+  @apply font-bold mb-2;
+  font-size: clamp(1.6rem, 1vw + 1.2rem, 2.8rem);
 }
 .slider-headlines .slider-par {
-  font-size: clamp(1rem, 0.5vw + 0.8rem, 1.3rem);
+  @apply text-sm tracking-wide uppercase;
   color: #f59e0b;
 }
 
-/* ===== SIDE COLUMN CARDS ===== */
+/* ===== PROJECT GRID BELOW ===== */
 .center-banner {
-  @apply grid gap-4 h-full;
-  grid-template-rows: 1fr 1fr;
+  @apply flex flex-wrap gap-3 justify-center;
+  /* Desktop return to grid */
+}
+@screen lg {
+  .center-banner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
+/* ===== SMALL PROJECT CARD ===== */
 .center-section {
-  @apply grid overflow-hidden rounded-xl transition relative;
+  @apply relative overflow-hidden rounded-xl transition;
   background: #1e293b;
-  grid-template-rows: 1fr auto;
+  border: 1px solid rgba(51, 65, 85, 0.2);
+  aspect-ratio: 4/2;
 }
 .center-section:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .center-section img {
-  @apply w-full h-full object-cover transition-transform duration-500;
+  @apply w-full h-full object-cover transition duration-500;
 }
 .center-section:hover img {
-  transform: scale(1.05);
-  filter: blur(7px) brightness(0.7);
+  transform: scale(1.08);
+  filter: brightness(0.7);
 }
 
-/* ===== TEXT BELOW IMAGE ===== */
+/* ===== PROJECT TITLE OVER IMAGE ===== */
 .dek {
-  @apply absolute inset-0 flex flex-col justify-end
-         px-5 py-4 font-semibold leading-snug
+  @apply absolute inset-0 flex items-end p-2 text-sm font-semibold
          opacity-0 transition duration-500;
-  color: #cbd5e1;
-  font-size: clamp(1rem, 0.8vw + 0.8rem, 1.5rem);
+  color: #ffffff;
 }
 .center-section:hover .dek {
   opacity: 1;
@@ -322,25 +317,39 @@ section .banner {
 
 /* ===== COMMON SECTION TITLE ===== */
 .market-section-subtitle {
-  @apply text-3xl font-bold text-center mb-12;
+  @apply text-3xl font-bold text-center mb-10;
   color: #f1f5f9;
 }
 
 /* ===== SKILLS SECTION ===== */
 .market-latest-news {
-  @apply py-20 px-6;
+  @apply py-10 px-2;
 }
 
 /* Skills grid */
 .skills-grid {
-  @apply flex flex-wrap gap-6 justify-center mt-12;
+  @apply grid gap-4 mt-8;
+  /* Mobile → 2 columns */
+  grid-template-columns: repeat(2, 1fr);
+  /* Tablet */
+}
+@screen md {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.skills-grid {
+  /* Desktop */
+}
+@screen xl {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* Skill card */
 .skill-card {
-  @apply px-6 py-5 rounded-xl transition overflow-hidden;
-  width: 260px;
-  background: #1e293b;
+  @apply px-2 py-2 md:px-6 md:py-5 rounded-xl transition overflow-hidden;
   border: 1px solid rgba(51, 65, 85, 0.2);
 }
 .skill-card:hover {
@@ -429,9 +438,41 @@ section .banner {
   color: #f59e0b;
 }
 
+/* ===== FOOTER ===== */
+.site-footer {
+  @apply py-4 px-4 mt-4;
+  background: #030712;
+  border-top: 1px solid rgba(51, 65, 85, 0.2);
+}
+
+/* Wrapper */
+.footer-wrapper {
+  @apply max-w-6xl mx-auto;
+}
+
+/* Head section */
+.footer-head {
+  @apply flex flex-col items-center gap-4 text-center;
+}
+@screen md {
+  .footer-head {
+    @apply flex-row justify-between text-left;
+  }
+}
+
+/* Logo */
+.footer-logo {
+  @apply text-xl font-bold tracking-wide;
+  color: #f59e0b;
+}
+
+/* Copyright */
+.copy {
+  @apply text-sm;
+  color: #cbd5e1;
+}
+
 /* Tailwind core */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/*# sourceMappingURL=main.css.map */

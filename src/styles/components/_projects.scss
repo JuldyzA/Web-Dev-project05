@@ -1,31 +1,25 @@
-
-
 @use '../variables' as *;
 
-/* ===== MAIN BANNER GRID ===== */
+/* ===== PROJECT SECTION WRAPPER ===== */
 
-section .banner {
-  @apply relative grid gap-6 mx-6 my-8 overflow-hidden ;
-  grid-template-columns: 2fr 1fr 1fr;
-
+.banner {
+  @apply px-4 py-4 flex flex-col gap-6;
+max-width: 1200px;
+  margin: auto;
   background: $color-background-primary;
-  max-height: clamp(520px, 70vh, 900px);
-
-  /* Responsive */
-  @screen md {
-    grid-template-columns: 1fr;
-  }
 }
 
-/* ===== HERO SLIDER ===== */
+/* ===== BIG SLIDER ===== */
 
 .auto-track {
-  @apply relative overflow-hidden h-full rounded-2xl transition;
-  height: 500px;
+  @apply relative overflow-hidden rounded-2xl mx-auto;
+
+  max-width: 900px;  /* controls width */
 }
 
 .banner-slide {
-  @apply relative hidden h-full;
+  @apply relative hidden rounded-2xl overflow-hidden;
+
   aspect-ratio: 16 / 9;
 
   &:first-child {
@@ -33,80 +27,85 @@ section .banner {
   }
 
   img {
-    @apply w-full h-full object-cover transition-transform duration-500;
+    @apply w-full h-full object-cover transition-transform duration-700;
   }
 
   &:hover img {
-    transform: scale(1.04);
+    transform: scale(1.05);
   }
 }
 
-/* ===== SLIDER TEXT OVERLAY ===== */
+/* ===== SLIDER TEXT ===== */
 
 .slider-headlines {
-  @apply absolute bottom-0 left-0 right-0 p-6;
+  @apply absolute bottom-0 left-0 right-0 p-8;
 
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.95),
-    rgba(0,0,0,0.6),
+    rgba(0,0,0,.95),
+    rgba(0,0,0,.5),
     transparent
   );
 
   backdrop-filter: blur(6px);
   color: $color-text-inverse;
 
-.slider-title {
-  @apply font-extrabold leading-tight mb-2;
-  font-size: clamp(1.4rem, 1vw + 1rem, 2.4rem);
-}
+  .slider-title {
+    @apply font-bold mb-2;
+    font-size: clamp(1.6rem, 1vw + 1.2rem, 2.8rem);
+  }
 
-.slider-par {
-//   @apply opacity-80;
-  font-size: clamp(1rem, 0.5vw + 0.8rem, 1.3rem);
-  color: $brand-accent;
+  .slider-par {
+    @apply text-sm tracking-wide uppercase;
+    color: $brand-accent;
   }
 }
 
-/* ===== SIDE COLUMN CARDS ===== */
+/* ===== PROJECT GRID BELOW ===== */
 
 .center-banner {
-  @apply grid gap-4 h-full;
-  grid-template-rows: 1fr 1fr;
+  @apply flex flex-wrap gap-3 justify-center;
+
+  /* Desktop return to grid */
+  @screen lg {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
+/* ===== SMALL PROJECT CARD ===== */
+
 .center-section {
-  @apply grid overflow-hidden rounded-xl transition relative;
+  @apply relative overflow-hidden rounded-xl transition;
 
   background: $color-background-secondary;
-  grid-template-rows: 1fr auto;
+  border: 1px solid rgba($color-border-primary, 0.2);
+
+  aspect-ratio: 4 / 2;
 
   &:hover {
     box-shadow: $shadow-card;
   }
 
   img {
-    @apply w-full h-full object-cover transition-transform duration-500;
+    @apply w-full h-full object-cover transition duration-500;
   }
 
   &:hover img {
-    transform: scale(1.05);
-    filter: blur(7px) brightness(0.7);
+    transform: scale(1.08);
+    filter: brightness(0.7);
   }
 }
 
-/* ===== TEXT BELOW IMAGE ===== */
+/* ===== PROJECT TITLE OVER IMAGE ===== */
 
 .dek {
-  @apply absolute inset-0 flex flex-col justify-end
-         px-5 py-4 font-semibold leading-snug
+  @apply absolute inset-0 flex items-end p-2 text-sm font-semibold
          opacity-0 transition duration-500;
 
-  color: $color-text-secondary;
-  font-size: clamp(1rem, 0.8vw + 0.8rem, 1.5rem);
-  
+  color: $color-text-inverse;
+
   .center-section:hover & {
     opacity: 1;
   }
 }
-

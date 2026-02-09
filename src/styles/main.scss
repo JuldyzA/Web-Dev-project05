@@ -10,6 +10,7 @@
 @use 'components/aboutme' as *;
 @use 'components/projects' as *;
 @use 'components/skills' as *;
+@use 'components/footer' as *;
 /* Tailwind core */
 @tailwind base;
 @tailwind components;

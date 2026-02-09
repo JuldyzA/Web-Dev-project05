@@ -137,16 +137,10 @@ body {
   @apply flex gap-4 flex-wrap items-center;
 }
 
-.hero-label {
-  @apply text-xs uppercase tracking-[3px] pb-2 mb-4 border-b;
-  color: #cbd5e1;
-  border-color: rgba(51, 65, 85, 0.08);
-}
-
 /* Vertical divider between columns */
 .hero-left {
   @apply md:border-r px-6 py-4;
-  border-color: rgba(51, 65, 85, 0.08);
+  border-color: rgba(51, 65, 85, 0.2);
 }
 
 .hero-right {
@@ -239,6 +233,90 @@ body {
 
 .science-card:hover::after {
   left: 120%;
+}
+
+/* ===== MAIN BANNER GRID ===== */
+section .banner {
+  @apply relative grid gap-6 mx-6 my-8 overflow-hidden;
+  grid-template-columns: 2fr 1fr 1fr;
+  background: #0f172a;
+  max-height: clamp(520px, 70vh, 900px);
+  /* Responsive */
+}
+@screen md {
+  section .banner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== HERO SLIDER ===== */
+.auto-track {
+  @apply relative overflow-hidden h-full;
+  height: 500px;
+}
+
+.banner-slide {
+  @apply relative hidden h-full;
+  aspect-ratio: 16/9;
+}
+.banner-slide:first-child {
+  @apply block;
+}
+.banner-slide img {
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+.banner-slide:hover img {
+  transform: scale(1.04);
+}
+
+/* ===== SLIDER TEXT OVERLAY ===== */
+.slider-headlines {
+  @apply absolute bottom-0 left-0 right-0 p-6;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6), transparent);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+}
+.slider-headlines .slider-title {
+  @apply font-extrabold leading-tight mb-2;
+  font-size: clamp(1.4rem, 1vw + 1rem, 2.4rem);
+}
+.slider-headlines .slider-par {
+  font-size: clamp(1rem, 0.5vw + 0.8rem, 1.3rem);
+  color: #f59e0b;
+}
+
+/* ===== SIDE COLUMN CARDS ===== */
+.center-banner {
+  @apply grid gap-4 h-full;
+  grid-template-rows: 1fr 1fr;
+}
+
+.center-section {
+  @apply grid overflow-hidden rounded-xl transition relative;
+  background: #1e293b;
+  grid-template-rows: 1fr auto;
+}
+.center-section:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.center-section img {
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+.center-section:hover img {
+  transform: scale(1.05);
+  filter: blur(7px) brightness(0.7);
+}
+
+/* ===== TEXT BELOW IMAGE ===== */
+.dek {
+  @apply absolute inset-0 flex flex-col justify-end
+         px-5 py-4 font-semibold leading-snug
+         opacity-0 transition duration-500;
+  color: #cbd5e1;
+  font-size: clamp(1rem, 0.8vw + 0.8rem, 1.5rem);
+}
+.center-section:hover .dek {
+  opacity: 1;
 }
 
 /* Tailwind core */

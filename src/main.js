@@ -18,7 +18,7 @@ function carousel() {
   if (myIndex > slides.length) myIndex = 1;
   slides[myIndex - 1].style.display = "block";
 
-  setTimeout(carousel, 2000);
+  setTimeout(carousel, 9000);
 }
 carousel();
 // Science Section Toggle

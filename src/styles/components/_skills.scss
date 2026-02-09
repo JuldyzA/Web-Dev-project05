@@ -1,0 +1,125 @@
+@use '../variables' as *;
+
+/* ===== COMMON SECTION TITLE ===== */
+
+.market-section-subtitle {
+  @apply text-3xl font-bold text-center mb-12;
+  color: $color-text-primary;
+}
+
+/* ===== SKILLS SECTION ===== */
+
+.market-latest-news {
+  @apply py-20 px-6;
+}
+
+/* Skills grid */
+
+.skills-grid {
+  @apply flex flex-wrap gap-6 justify-center mt-12;
+}
+
+/* Skill card */
+
+.skill-card {
+  @apply px-6 py-5 rounded-xl transition overflow-hidden;
+
+  width: 260px;
+  background: $color-background-secondary;
+  border: 1px solid rgba($color-border-primary, 0.2);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-card;
+  }
+}
+
+/* Skill title */
+
+.skill-title {
+  @apply text-2xl font-bold mb-2;
+  color: $brand-accent;
+  transition: all .3s ease;
+}
+
+/* Hidden skills list */
+
+.skill-items {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all .4s ease;
+
+  @apply text-sm uppercase tracking-wide leading-relaxed mt-3 pt-3 border-t;
+
+  border-color: rgba($color-border-primary, 0.2);
+  color: $color-text-secondary;
+}
+
+/* Reveal on hover */
+
+.skill-card:hover .skill-items {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.skill-card:hover .skill-title {
+  color: $color-text-secondary;
+}
+
+/* ===== EXPERIENCE SECTION ===== */
+
+.experience-section {
+  @apply py-20 px-6;
+}
+
+/* Experience grid */
+
+.experience-grid {
+  @apply grid gap-6 mt-10;
+
+  grid-template-columns: 1fr;
+
+  @screen md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @screen xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Experience cards */
+
+.experience-card {
+  @apply p-6 rounded-xl transition;
+
+  background: $color-background-secondary;
+  border: 1px solid rgba($color-border-primary, 0.2);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-card;
+  }
+}
+
+.exp-role {
+  @apply font-bold text-lg mb-1;
+  color: $color-text-primary;
+}
+
+.exp-org {
+  @apply text-sm mb-2;
+  color: $brand-accent;
+}
+
+.exp-focus {
+  @apply text-sm mb-4;
+  color: $color-text-secondary;
+}
+
+.exp-period {
+  @apply text-xs px-3 py-1 rounded-full inline-block;
+  background: rgba($brand-accent, 0.15);
+  color: $brand-accent;
+}

@@ -5,7 +5,7 @@
 /* ===== MAIN BANNER GRID ===== */
 
 section .banner {
-  @apply relative grid gap-6 mx-6 my-8 overflow-hidden;
+  @apply relative grid gap-6 mx-6 my-8 overflow-hidden ;
   grid-template-columns: 2fr 1fr 1fr;
 
   background: $color-background-primary;
@@ -20,7 +20,7 @@ section .banner {
 /* ===== HERO SLIDER ===== */
 
 .auto-track {
-  @apply relative overflow-hidden h-full;
+  @apply relative overflow-hidden h-full rounded-2xl transition;
   height: 500px;
 }
 
